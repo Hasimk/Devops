@@ -1,0 +1,91 @@
+How To Install Jenkins
+===============================
+Sudo su -
+cd /opt
+Download JDK with help of below link-
+Step1- Wget https://download.oracle.com/otn/java/jdk/8u241-b07/1f5b5a70bf22433b84d0e960903adac8/jdk-8u241-linux-x64.tar.gz?AuthParam=1584163963_a67e3daafcd87845f246c58f3f30d9e2
+
+Tomcat instaaltion with help of below link-----
+Step2-wget https://www.apache.org/dist/tomcat/tomcat-9/v9.0.31/bin/apache-tomcat-9.0.31.tar.gz.sha512
+
+Download Maven with help of below link---
+https://mirrors.estointernet.in/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+
+
+Download Jenkins war file---
+step4- wget http://ftp-chi.osuosl.org/pub/jenkins/war/2.225/jenkins.war
+
+Extract all gz file with help of below command
+
+1- tar -xzf apache
+2- tar -xzf jdk
+
+#after that go to below command
+
+#cd ~
+
+# vi .profile
+
+#Set the path--
+
+export JAVA_HOME="/opt/jdk1.8.0_241"
+export PATH=$JAVA_HOME/bin:$PATH
+
+export CATALINA_HOME="/opt/apache-tomcat-9.0.33"
+export PATH=$CATALINA_HOME/bin:$PATH
+
+export M2_HOME="/opt/apache-maven-3.6.3"
+export PATH=$M2_HOME/bin:$PATH
+
+
+# source .profile
+
+# copy the Jenkins war file and put the webapps folder with help of below command.
+
+# cp jenkins.war /opt/apache-tomcat-9.0.31/webapps/
+
+# start the Apache server with help of below command
+
+# startup.sh
+
+# copy the ubunutu machin Ip and put the browser and see the below link.
+
+#http://18.222.146.239:8080/jenkins
+
+how find Administartor password
+
+#cd /root/.jenkins/secrets/ cat initialAdminPassword
+
+# cat initialAdminPassword
+
+# and set the password
+===========================================
+after that go to ManageJenkins then---> Global Tool Configuration---> and Set The Path for Maven,jdk,Git
+======================================================
+Manage Plugin---> and go to avlabile option----> and add maven integration----install without restart
+and other maven pipeline install----
+
+=========================================
+
+How to creat project in jenkins.
+
+# Creat Free style Project
+
+# Jenkinks new Items--Free style project-
+
+Build ---> execute shell and paste below command
+mkdir /tmp/dir1
+mkdir /tmp/dir2
+echo "Hello from jenkins Master" > /tmp/demo.txt
+echo "file created!"
+cp /tmp/demo.txt /tmp/sample.txt
+echo "File Copied!"
+========================================================
+
+
+
+
+
+
+
+

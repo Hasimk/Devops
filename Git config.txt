@@ -1,0 +1,133 @@
+                                                       GIT commands
+                                                      ------------------------
+ git config:
+ ---------------
+    # sudo su -               ( to switch to root user)
+    # apt-get update
+    # apt-get install git-core -y
+    # git --version
+    # git init                    (to create an Empty git repo)
+
+   # git config --global user.name sathyadevops
+   # git config --global user.email sathyadevops1@gmail.com
+
+   11  ls -a
+   12  vi .gitconfig
+   13  git clone https://github.com/Hasimk/TestGit.git
+   15  cd TestGit/
+   17  vi README.md
+   19  git status
+
+   20  git add README.md
+   21  git commit -m "code"
+   25  git push origin master
+=======================================================================================
+password less ofr git
+
+   38  ls -a                ----> to list hidden files
+   39  cd .ssh/        
+   40  clear
+   42  ssh-keygen     ---> to generate Keys
+   43  ls
+   44  cat id_rsa.pub   ---> copy a Public Key 
+
+ visit --> www.github.com/sathyadevops/dev7pm.git  --> settings  --> Deploy keys
+               add deploy keys  --->  paste a public key  ---> allow write access  --> Save
+
+   48  cd dev7pm/
+   49  git remote set-url origin git@github.com:sathyadevops/dev7pm.git
+===================================================================================================================================================================
+   50  vi sample.c
+ .............New code..............
+
+   51  git add sample.c                  ---> to move the code to Stage area
+   52  git commit -m "c=code"      ---> to save the code to Local repo
+   53  git push origin master        ---> to push the code to Global repo
+
+
+   56  git branch
+   57  git branch br1                ---> to create a Branch
+
+   59  git checkout br1             ---> to switch to that branch  
+   60  git branch
+   61  vi index.html
+ .............New code..............
+
+   62  git add index.html
+   63  git commit -m "html code"
+   64  git push origin br1
+
+   68  git checkout master
+   71  git merge br1
+
+    84  git push origin master
+======================================================================================================================================
+If file move from master to branch then follow below step
+   git checkout br1
+  134  git merge master
+  135  git push origin br1
+=============================================
+If file move from branch to master then follow below step
+      git checkout master
+      git merge br1
+     git push origin master
+=======================================================================================
+
+
+   78  mkdir mydir
+   80  git mv sample.c mydir/sample.c           ---> to move a file
+   81  git commit -am "file moved"
+   82  git push origin master
+   83  ls
+   86  git rm index.html                               
+   88  git status 
+   89  git reset HEAD index.html                     ---> to unstage the code
+   91  git status
+   92  git checkout index.html
+   93  ls
+   94  git rm index.html
+   95  git commit -am "file removed"
+   96  git push origin master
+=======================================================================================================================
+
+ 105  git log
+  108  git log -p
+  109  clear
+  110  git log --since=25-April-2020 --until=27-April-2020
+  112  git log --oneline
+
+
+  115  git branch
+  116  git branch -d br1                       ---> to remove a local branch
+  118  git push origin --delete br1       ---> to remote a Gloabl branch
+  119  git checkout -b dev                      
+  120  git status
+  121  git branch
+
+  116  git branch -D br1                       ---> to remove a local branch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

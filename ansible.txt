@@ -1,0 +1,31 @@
+root@ip-172-31-22-36:~# cat  playbook/pb6.yml
+---
+- hosts: all
+  become: true
+  gather_facts: true
+  tasks:
+          - name: to download git package
+            git:
+               repo: https://github.com/sathyadevops/mvnproj.git
+
+               dest: /tmp/clone/
+
+          - name: to download package
+
+            get_url:
+               url: https://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.54/bin/apache-tomcat-8.5.54.tar.gz
+               dest: /tmp/apache-tomcat-8.5.54.tar.gz
+
+               url: https://mirrors.estointernet.in/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+               dest: /tmp/apache-maven-3.6.3-bin.tar.gz
+
+
+          - name: to extract package
+            unarchive:
+                    src: /tmp/apache-tomcat-8.5.54.tar.gz
+                    dest: /tmp/
+
+                    src: /tmp/apache-maven-3.6.3-bin.tar.gz
+                    dest: /tmp/
+
+                    remote_src: yes
